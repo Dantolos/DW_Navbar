@@ -1,0 +1,10 @@
+body {
+}
+#DW_GLOBAL_NAVBAR {
+	z-index: 100000;
+}
+
+.dw__navbar {
+	width: 100vw;
+	z-index: 100000 !important;
+}
