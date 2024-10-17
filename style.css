@@ -14,3 +14,11 @@ body {
 .dw__global_nav_embed_wrapper {
 	transition: all 200ms ease-in-out;
 }
+
+@font-face {
+	font-family: "Herbit";
+	font-weight: 300 800;
+	font-style: normal;
+	font-stretch: normal;
+	src: url("./fonts/herbit-semibold.woff2") format("woff2");
+}
