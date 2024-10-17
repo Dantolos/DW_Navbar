@@ -47,11 +47,13 @@ function load_navbar_from_api() {
      
  
      // Enqueue scripts & styles
+     wp_enqueue_style('toplevel-navbar-font', esc_url($data['fonts_embed']), array(), null);
      wp_enqueue_style('toplevel-navbar-style', esc_url($data['style_link']), array(), null);
      wp_enqueue_style('toplevel-navbar-style-plugin', plugin_dir_url(__FILE__).'style.css', array(), null);
      wp_enqueue_script('toplevel-navbar-script', esc_url($data['script_link']), array(), null, true);
+     wp_enqueue_script('toplevel-navbar-script-plugin', plugin_dir_url(__FILE__).'script.js', array(), null, true);
   
      //RENDER
-     echo '<div id="DW__GLOBAL_NAVBAR">'.$data['content'].'</div>';
+     echo '<div id="DW__GLOBAL_NAVBAR" class="initial_hide">'.$data['content'].'</div>';
  } 
  add_action('wp_head',  'load_navbar_from_api');
