@@ -10,9 +10,13 @@ fetch(apiUrl)
 	})
 	.then((data) => {
 		DW_GLOBAL_NAVBAR.innerHTML = data.toplevel_navbar;
+
+		DW_GLOBAL_NAVBAR.innerHTML += "<script>" + data.script + "</script>";
+		//console.log(DW_GLOBAL_NAVBAR);
+		NAV_SCRIPT_INIT();
 	})
 	.catch((error) => {
 		console.error("Es gab ein Problem mit der Fetch-Operation:", error);
 	});
 
-console.log(da);
+console.log("da");

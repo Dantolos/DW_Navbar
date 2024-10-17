@@ -1,7 +1,8 @@
 body {
 }
-#DW_GLOBAL_NAVBAR {
-	z-index: 100000;
+#DW__GLOBAL_NAVBAR {
+	z-index: 2000000;
+	position: fixed;
 }
 
 .dw__navbar {

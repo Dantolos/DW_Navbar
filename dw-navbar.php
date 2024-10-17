@@ -5,10 +5,10 @@
  * @package           Dw_Navbar
  *
  * @wordpress-plugin
- * Plugin Name:       DW_Navbar
+ * Plugin Name:       DW Navbar
  * Plugin URI:        https://github.com/Dantolos/DW_Navbar/
  * Description:       Wordpress Plugin to integrate global navigation bar from demenzworld.com
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Aaron
  * Author URI:        https://github.com/Dantolos/
  * License:           GPL-2.0+
@@ -22,36 +22,36 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
  
+
 define( 'DW_NAVBAR_VERSION', '1.0.0' );
 
-function dw_navbat() {
-     echo get_style();
-     echo '<div id="dw__global_navbar">Dies ist ein benutzerdefiniertes Div im Footer</div>';
-     echo get_script();
-}
+// Load Settings-Page for Wordpress-Backend
+require_once(__DIR__.'/options.php');
+
+
+// Initial Function
+function load_navbar_from_api() {
+   
+     // Check if Navigation is activated on options page - if not; escape
+     $active = get_option('dw_navigation_activate');
+     if( !$active ){ return; }
+
+     $api_url = get_option('dw_navigation_api_url') ?: 'http://localhost:10038/wp-json/dw/navbar';
+     $response = wp_remote_get($api_url);
  
-// Füge das Div im Footer-Bereich hinzu
-add_action('wp_head', 'dw_navbat');
-
-
-//GET CSS File Content in a style-tag
-function get_style() {
-     $cssFile = __DIR__.'/style.css';
-     $style_return = '<style type="text/css">';
-     if (file_exists($cssFile)) {
-          $style_return .= file_get_contents($cssFile);
-     }    
-     $style_return .= '</style>'; 
-     return $style_return;
-}
-
-//GET JS File Content in a script-tag
-function get_script() {
-     $jsFile = __DIR__.'/script.js';
-     $js_return = '<script type="text/javascript">';
-     if (file_exists($jsFile)) {
-          $js_return .= file_get_contents($jsFile);
-     }
-     $js_return .= '</script>'; 
-     return $js_return;
-}
+     // escape, if api doesn't work
+     if (is_wp_error($response)) { return; }
+  
+     $body = wp_remote_retrieve_body($response);
+     $data = json_decode($body, true);
+     
+ 
+     // Enqueue scripts & styles
+     wp_enqueue_style('toplevel-navbar-style', esc_url($data['style_link']), array(), null);
+     wp_enqueue_style('toplevel-navbar-style-plugin', plugin_dir_url(__FILE__).'style.css', array(), null);
+     wp_enqueue_script('toplevel-navbar-script', esc_url($data['script_link']), array(), null, true);
+  
+     //RENDER
+     echo '<div id="DW__GLOBAL_NAVBAR">'.$data['content'].'</div>';
+ } 
+ add_action('wp_head',  'load_navbar_from_api');
