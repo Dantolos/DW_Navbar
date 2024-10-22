@@ -1,5 +1,10 @@
 body {
+	margin-top: 40px !important;
 }
+#top-bar > div > div > div.bg-royalpurple {
+	margin-top: -1px;
+}
+
 #DW__GLOBAL_NAVBAR {
 	z-index: 2000000;
 	position: fixed;
@@ -10,6 +15,7 @@ body {
 .dw__navbar {
 	width: 100vw;
 	z-index: 100000 !important;
+	box-shadow: 3px 3px 32px -4px rgba(10, 0, 51, 0.2);
 }
 .dw__global_nav_embed_wrapper {
 	transition: all 200ms ease-in-out;
