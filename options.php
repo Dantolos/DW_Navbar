@@ -4,6 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; 
 }
 
+$plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ) );
+$plugin_version = $plugin_data['Version'];
 
 // Funktion zum Hinzufügen der Optionsseite im Admin-Menü
 function dw_global_navigation_add_admin_menu() {
@@ -54,6 +56,7 @@ function dw_global_navigation_add_admin_menu() {
  
  // Callback für die Sektion (optional)
  function dw_global_navigation_settings_section_callback() {
+     echo '<p><strong>'.$plugin_version.'</strong></p>';
      echo '<p>Konfigurieren Sie hier die globale Navigation.</p>';
  }
  
