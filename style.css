@@ -1,7 +1,8 @@
 body {
 	margin-top: 40px !important;
 }
-#top-bar > div > div > div.bg-royalpurple {
+#top-bar > div > div > div.bg-royalpurple,
+.page-header__top-text {
 	margin-top: -1px;
 }
 
