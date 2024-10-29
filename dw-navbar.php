@@ -8,7 +8,7 @@
  * Plugin Name:       DW Navbar
  * Plugin URI:        https://github.com/Dantolos/DW_Navbar/
  * Description:       Wordpress Plugin to integrate global navigation bar from demenzworld.com
- * Version:           1.0.95
+ * Version:           1.0.96
  * Author:            Aaron
  * Author URI:        https://github.com/Dantolos/
  * License:           GPL-2.0+
@@ -37,7 +37,7 @@ function load_navbar_from_api() {
      if( !$active ){ return; }
 
      $api_url = get_option('dw_navigation_api_url') ?: 'https://demenzworld.com/wp-json/dw/navbar';
-     $response = wp_remote_get($api_url, array( 'sslverify' => false ));
+     $response = wp_remote_get( $api_url );
  
      // escape, if api doesn't work
      if (is_wp_error($response)) { 
