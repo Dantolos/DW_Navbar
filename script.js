@@ -6,4 +6,6 @@ setTimeout(() => {
 }, 100);
 
 const DW_GLOBAL_FOOTER = document.querySelector("#DW__GLOBAL_FOOTER");
-document.body.appendChild(DW_GLOBAL_FOOTER);
+if (DW_GLOBAL_FOOTER) {
+	document.body.appendChild(DW_GLOBAL_FOOTER);
+}

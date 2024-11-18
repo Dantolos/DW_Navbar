@@ -8,7 +8,7 @@
  * Plugin Name:       DW Navbar
  * Plugin URI:        https://github.com/Dantolos/DW_Navbar/
  * Description:       Wordpress Plugin to integrate global navigation bar from demenzworld.com
- * Version:           1.1.04
+ * Version:           1.1.06
  * Author:            Aaron
  * Author URI:        https://github.com/Dantolos/
  * License:           GPL-2.0+
@@ -75,8 +75,8 @@ function load_navbar_from_api() {
           $data_footer = dw__request_api('footer'); 
           
           // Enqueue scripts & styles for footer
-          wp_enqueue_style('toplevel-navbar-style', esc_url($data_footer['style_link']), array(), null);
-          wp_enqueue_script('toplevel-navbar-script', esc_url($data_footer['script_link']), array(), null, true);
+          wp_enqueue_style('toplevel-footer-style', esc_url($data_footer['style_link']), array(), null);
+          wp_enqueue_script('toplevel-footer-script', esc_url($data_footer['script_link']), array(), null, true);
 
           //RENDER 
           echo '<div id="DW__GLOBAL_FOOTER" class="initial_hide">'.$data_footer['content'].'</div>';
