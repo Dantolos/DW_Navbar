@@ -8,7 +8,7 @@ body {
 
 header {
 	position: fixed !important;
-	top: 120px !important;
+	top: 40px !important;
 }
 
 @media screen and (max-width: 1220px) {
