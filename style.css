@@ -9,13 +9,13 @@ body {
 header {
 	position: fixed !important;
 	top: 40px !important;
+	width: 100vw;
 }
 
 @media screen and (max-width: 1220px) {
 	header {
 		position: sticky;
 		top: 0px !important;
-		width: 100vw;
 	}
 	body {
 		margin-top: 60px !important;

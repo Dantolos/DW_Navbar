@@ -8,7 +8,7 @@
  * Plugin Name:       DW Navbar
  * Plugin URI:        https://github.com/Dantolos/DW_Navbar/
  * Description:       Wordpress Plugin to integrate global navigation bar from demenzworld.com
- * Version:           1.1.06
+ * Version:           1.1.07
  * Author:            Aaron
  * Author URI:        https://github.com/Dantolos/
  * License:           GPL-2.0+
@@ -50,6 +50,8 @@ function dw__request_api(string $slug):?array {
 // Initial Function
 function load_navbar_from_api() {
    
+     $version = '1.0.1';
+
      // Check if Navigation is activated on options page - if not; escape
      $active = get_option('dw_global_plugin');
      if( !$active ){ return; }
@@ -58,11 +60,15 @@ function load_navbar_from_api() {
      if(get_option('dw_navbar_activate')){
           $data = dw__request_api('navbar');
 
-          // Enqueue scripts & styles 
-          wp_enqueue_style('toplevel-navbar-style', esc_url($data['style_link']), array(), null);
-          wp_enqueue_style('toplevel-navbar-style-plugin', plugin_dir_url(__FILE__).'style.css', array(), null);
-          wp_enqueue_script('toplevel-navbar-script', esc_url($data['script_link']), array(), null, true);
-          wp_enqueue_script('toplevel-navbar-script-plugin', plugin_dir_url(__FILE__).'script.js', array(), null, true);
+          // Enqueue scripts & styles  
+          
+          // Enqueue styles
+          wp_enqueue_style('toplevel-navbar-style', esc_url($data['style_link']), array(), $version);
+          wp_enqueue_style('toplevel-navbar-style-plugin', plugin_dir_url(__FILE__) . 'style.css', array(), $version);
+          
+          // Enqueue scripts
+          wp_enqueue_script('toplevel-navbar-script', esc_url($data['script_link']), array(), $version, true);
+          wp_enqueue_script('toplevel-navbar-script-plugin', plugin_dir_url(__FILE__) . 'script.js', array(), $version, true);
      
           //RENDER 
           echo '<div id="DW__GLOBAL_NAVBAR" class="initial_hide">'.$data['content'].'</div>';
@@ -75,8 +81,8 @@ function load_navbar_from_api() {
           $data_footer = dw__request_api('footer'); 
           
           // Enqueue scripts & styles for footer
-          wp_enqueue_style('toplevel-footer-style', esc_url($data_footer['style_link']), array(), null);
-          wp_enqueue_script('toplevel-footer-script', esc_url($data_footer['script_link']), array(), null, true);
+          wp_enqueue_style('toplevel-footer-style', esc_url($data_footer['style_link']), array(), $version);
+          wp_enqueue_script('toplevel-footer-script', esc_url($data_footer['script_link']), array(), $version, true);
 
           //RENDER 
           echo '<div id="DW__GLOBAL_FOOTER" class="initial_hide">'.$data_footer['content'].'</div>';
