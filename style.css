@@ -8,7 +8,17 @@ body {
 
 header {
 	position: fixed !important;
-	top: 40px !important;
+	top: 120px !important;
+}
+
+@media screen and (max-width: 1220px) {
+	header {
+		position: sticky;
+		top: 0px !important;
+	}
+	body {
+		margin-top: 60px !important;
+	}
 }
 
 #DW__GLOBAL_NAVBAR {
