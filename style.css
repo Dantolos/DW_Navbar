@@ -6,6 +6,11 @@ body {
 	margin-top: -1px;
 }
 
+header {
+	position: fixed !important;
+	top: 40px !important;
+}
+
 #DW__GLOBAL_NAVBAR {
 	z-index: 2000000;
 	position: fixed;
