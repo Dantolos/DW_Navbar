@@ -38,7 +38,8 @@ div:has(> div.content) {
 		top: 0px !important;
 	}
 	main {
-		margin-top: 120px;
+		top: 0;
+		margin-top: 40px;
 	}
 	div:has(> div.content) {
 		top: 0;

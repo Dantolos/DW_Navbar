@@ -38,64 +38,64 @@ function dw_global_navigation_add_admin_menu() {
 
      // CHECKBOX Plugin Activation
      add_settings_field(
-          'dw_global_plugin',              // ID des Felds
-          'Plugin aktivieren/deaktivieren',  // Label des Felds
-          'dw_plugin_activate_render',       // Callback-Funktion zum Rendern des Felds
-          'dw_global_navigation',                // Seite (Slug)
-          'dw_global_settings_section'// Sektion
-     );
+        'dw_global_plugin',              // ID des Felds
+        'Plugin aktivieren/deaktivieren',  // Label des Felds
+        'dw_plugin_activate_render',       // Callback-Funktion zum Rendern des Felds
+        'dw_global_navigation',                // Seite (Slug)
+        'dw_global_settings_section'// Sektion
+    );
 
-       add_settings_section(
-         'dw_navbar_settings_section', // ID der Sektion
-         'Navbar',      // Titel der Sektion
-         'dw_settings_section_header_callback', // Beschreibung (optional)
-         'dw_global_navigation'                   // Seite (Slug), der die Sektion hinzugefügt wird
-     );
+    add_settings_section(
+        'dw_navbar_settings_section', // ID der Sektion
+        'Navbar',      // Titel der Sektion
+        'dw_settings_section_header_callback', // Beschreibung (optional)
+        'dw_global_navigation'                   // Seite (Slug), der die Sektion hinzugefügt wird
+    );
 
  
-     // CHECKBOX Header Activation
-     add_settings_field(
-         'dw_navbar_activate',              // ID des Felds
-         'Activate Navbar',             // Label des Felds
-         'dw_navbar_activate_render',       // Callback-Funktion zum Rendern des Felds
-         'dw_global_navigation',                // Seite (Slug)
-         'dw_navbar_settings_section'// Sektion
-     );
+    // CHECKBOX Header Activation
+    add_settings_field(
+        'dw_navbar_activate',              // ID des Felds
+        'Activate Navbar',             // Label des Felds
+        'dw_navbar_activate_render',       // Callback-Funktion zum Rendern des Felds
+        'dw_global_navigation',                // Seite (Slug)
+        'dw_navbar_settings_section'// Sektion
+    );
   
-     // API URL Input Field
-     add_settings_field(
-         'dw_navigation_api_url',              // ID des Felds
-         'API URL',             // Label des Felds
-         'dw_navigation_api_url_render',       // Callback-Funktion zum Rendern des Felds
-         'dw_global_navigation',                // Seite (Slug)
-         'dw_global_settings_section'// Sektion
-     );
+    // API URL Input Field
+    add_settings_field(
+        'dw_navigation_api_url',              // ID des Felds
+        'API URL',             // Label des Felds
+        'dw_navigation_api_url_render',       // Callback-Funktion zum Rendern des Felds
+        'dw_global_navigation',                // Seite (Slug)
+        'dw_global_settings_section'// Sektion
+    );
 
 
-     add_settings_section(
+    add_settings_section(
         'dw_footer_settings_section', // ID der Sektion
         'Footer',      // Titel der Sektion
         'dw_footer_settings_section_callback', // Beschreibung (optional)
         'dw_global_navigation'                 // Seite (Slug), der die Sektion hinzugefügt wird
-     );
+    );
  
-     // CHECKBOX Footer Activation
-     add_settings_field(
+    // CHECKBOX Footer Activation
+    add_settings_field(
         'dw_footer_activate',              // ID des Felds
         'Activate Footer',             // Label des Felds
         'dw_footer_activate_render',       // Callback-Funktion zum Rendern des Felds
         'dw_global_navigation',                // Seite (Slug)
         'dw_footer_settings_section'// Sektion
-     );
+    );
 }
 add_action('admin_init', 'dw_global_navigation_settings_init');
 
 // Callback für die Sektion (optional)
 function dw_global_navigation_settings_section_callback() {
-   $plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ) );
-   $plugin_version = $plugin_data['Version'];   
-   echo '<p><strong>'.$plugin_version.'</strong></p>';
-   echo '<p>Konfigurieren Sie hier die globale Navigation.</p>';
+    $plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ) );
+    $plugin_version = $plugin_data['Version'];   
+    echo '<p><strong>'.$plugin_version.'</strong></p>';
+    echo '<p>Konfigurieren Sie hier die globale Navigation.</p>';
 }
 
 function dw_plugin_activate_render(){
