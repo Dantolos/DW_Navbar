@@ -25,6 +25,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( 'DW_NAVBAR_VERSION', '1.0.0' );
 
+$plugin_version = get_file_data(__FILE__, ['Version' => 'Version'])['Version'];
+
 // Load Settings-Page for Wordpress-Backend
 require_once(__DIR__.'/options.php');
 
@@ -63,12 +65,12 @@ function load_navbar_from_api() {
           // Enqueue scripts & styles  
           
           // Enqueue styles
-          wp_enqueue_style('toplevel-navbar-style', esc_url($data['style_link']), array(), $version);
-          wp_enqueue_style('toplevel-navbar-style-plugin', plugin_dir_url(__FILE__) . 'style.css', array(), $version);
+          wp_enqueue_style('toplevel-navbar-style', esc_url($data['style_link']), array(), $plugin_version);
+          wp_enqueue_style('toplevel-navbar-style-plugin', plugin_dir_url(__FILE__) . 'style.css', array(), $plugin_version);
           
           // Enqueue scripts
-          wp_enqueue_script('toplevel-navbar-script', esc_url($data['script_link']), array(), $version, true);
-          wp_enqueue_script('toplevel-navbar-script-plugin', plugin_dir_url(__FILE__) . 'script.js', array(), $version, true);
+          wp_enqueue_script('toplevel-navbar-script', esc_url($data['script_link']), array(), $plugin_version, true);
+          wp_enqueue_script('toplevel-navbar-script-plugin', plugin_dir_url(__FILE__) . 'script.js', array(), $plugin_version, true);
      
           //RENDER 
           echo '<div id="DW__GLOBAL_NAVBAR" class="initial_hide">'.$data['content'].'</div>';
@@ -81,8 +83,8 @@ function load_navbar_from_api() {
           $data_footer = dw__request_api('footer'); 
           
           // Enqueue scripts & styles for footer
-          wp_enqueue_style('toplevel-footer-style', esc_url($data_footer['style_link']), array(), $version);
-          wp_enqueue_script('toplevel-footer-script', esc_url($data_footer['script_link']), array(), $version, true);
+          wp_enqueue_style('toplevel-footer-style', esc_url($data_footer['style_link']), array(), $plugin_version);
+          wp_enqueue_script('toplevel-footer-script', esc_url($data_footer['script_link']), array(), $plugin_version, true);
 
           //RENDER 
           echo '<div id="DW__GLOBAL_FOOTER" class="initial_hide">'.$data_footer['content'].'</div>';
