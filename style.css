@@ -38,13 +38,23 @@ div:has(> div.content) {
 		top: 0px !important;
 	}
 	main {
-		top: 60px;
+		margin-top: 120px;
 	}
 	div:has(> div.content) {
 		top: 0;
 	}
 	body {
 		margin-top: 0px !important;
+	}
+	/*Wiki Content */
+	#alphabet {
+		margin-top: 0;
+	}
+	.page-header__bottom {
+		margin-top: 100px;
+	}
+	main.page-content {
+		margin-top: 20px;
 	}
 }
 
@@ -70,4 +80,17 @@ div:has(> div.content) {
 	font-style: normal;
 	font-stretch: normal;
 	src: url("./fonts/herbit-semibold.woff2") format("woff2");
+}
+
+/*LP Fixes*/
+.no-instructor {
+	display: none;
+}
+#popup-course {
+	margin-top: 40px;
+}
+@media screen and (max-width: 1220px) {
+	#popup-course {
+		margin-top: 0px;
+	}
 }
