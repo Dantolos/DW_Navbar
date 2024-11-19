@@ -1,15 +1,26 @@
 body {
-	margin-top: 120px !important;
+	margin-top: 40px !important;
 }
 #top-bar > div > div > div.bg-royalpurple,
 .page-header__top-text {
 	margin-top: -1px;
 }
 
-header {
+header:has(> div#top-bar)  /*Journal Header*/ {
 	position: fixed !important;
 	top: 40px !important;
 	width: 100vw;
+}
+
+/*Journal normal Content*/
+main {
+	top: 100px;
+	position: relative;
+}
+
+/*Journal Article Content*/
+div:has(> div.content) {
+	top: 100px;
 }
 
 @media screen and (max-width: 1220px) {
