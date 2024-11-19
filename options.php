@@ -3,9 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; 
 }
-
-
-
+ 
 // Funktion zum Hinzufügen der Optionsseite im Admin-Menü
 function dw_global_navigation_add_admin_menu() {
      add_options_page(
@@ -64,7 +62,7 @@ function dw_global_navigation_add_admin_menu() {
          'dw_navbar_settings_section'// Sektion
      );
   
-     // CSS-Link-Feld
+     // API URL Input Field
      add_settings_field(
          'dw_navigation_api_url',              // ID des Felds
          'API URL',             // Label des Felds
@@ -75,19 +73,19 @@ function dw_global_navigation_add_admin_menu() {
 
 
      add_settings_section(
-         'dw_footer_settings_section', // ID der Sektion
-         'Footer',      // Titel der Sektion
-       'dw_footer_settings_section_callback', // Beschreibung (optional)
-         'dw_global_navigation'                 // Seite (Slug), der die Sektion hinzugefügt wird
+        'dw_footer_settings_section', // ID der Sektion
+        'Footer',      // Titel der Sektion
+        'dw_footer_settings_section_callback', // Beschreibung (optional)
+        'dw_global_navigation'                 // Seite (Slug), der die Sektion hinzugefügt wird
      );
  
      // CHECKBOX Footer Activation
      add_settings_field(
-         'dw_footer_activate',              // ID des Felds
-         'Activate Footer',             // Label des Felds
-         'dw_footer_activate_render',       // Callback-Funktion zum Rendern des Felds
-         'dw_global_navigation',                // Seite (Slug)
-         'dw_footer_settings_section'// Sektion
+        'dw_footer_activate',              // ID des Felds
+        'Activate Footer',             // Label des Felds
+        'dw_footer_activate_render',       // Callback-Funktion zum Rendern des Felds
+        'dw_global_navigation',                // Seite (Slug)
+        'dw_footer_settings_section'// Sektion
      );
 }
 add_action('admin_init', 'dw_global_navigation_settings_init');

@@ -24,12 +24,18 @@ div:has(> div.content) {
 }
 
 @media screen and (max-width: 1220px) {
-	header {
+	header:has(> div#top-bar)  /*Journal Header*/ {
 		position: sticky;
 		top: 0px !important;
 	}
+	main {
+		top: 60px;
+	}
+	div:has(> div.content) {
+		top: 0;
+	}
 	body {
-		margin-top: 60px !important;
+		margin-top: 0px !important;
 	}
 }
 
