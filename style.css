@@ -31,6 +31,19 @@ div:has(> div.content) {
 	position: relative;
 }
 
+#DW__GLOBAL_FOOTER h2,
+#DW__GLOBAL_FOOTER h3,
+#DW__GLOBAL_FOOTER h4,
+#DW__GLOBAL_FOOTER h5,
+#DW__GLOBAL_FOOTER h6,
+#DW__GLOBAL_FOOTER p {
+	color: white !important;
+}
+#DW__GLOBAL_FOOTER a {
+	text-decoration: none;
+	color: white;
+}
+
 @media screen and (max-width: 1220px) {
 	/*Journal Header*/
 	header:has(> div#top-bar) {
@@ -48,11 +61,14 @@ div:has(> div.content) {
 		margin-top: 0px !important;
 	}
 	/*Wiki Content */
+	header.page-header /*Wiki Header*/ {
+		top: 0 !important;
+	}
 	#alphabet {
 		margin-top: 0;
 	}
 	.page-header__bottom {
-		margin-top: 100px;
+		margin-top: 0px;
 	}
 	main.page-content {
 		margin-top: 20px;
