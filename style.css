@@ -6,7 +6,8 @@ body {
 	margin-top: -1px;
 }
 
-header:has(> div#top-bar)  /*Journal Header*/ {
+header:has(> div#top-bar), /*Journal Header*/
+header.page-header /*Wiki Header*/ {
 	position: fixed !important;
 	top: 40px !important;
 	width: 100vw;
@@ -23,8 +24,16 @@ div:has(> div.content) {
 	top: 100px;
 }
 
+/*Wiki Content */
+.page-header__bottom,
+#alphabet {
+	top: 100px;
+	position: relative;
+}
+
 @media screen and (max-width: 1220px) {
-	header:has(> div#top-bar)  /*Journal Header*/ {
+	/*Journal Header*/
+	header:has(> div#top-bar) {
 		position: sticky;
 		top: 0px !important;
 	}
