@@ -1,5 +1,5 @@
 html {
-	height: auto;
+	height: auto !important;
 }
 body {
 	margin-top: 40px !important;
@@ -34,14 +34,11 @@ div:has(> div.content) {
 	position: relative;
 }
 
-#DW__GLOBAL_FOOTER h2,
-#DW__GLOBAL_FOOTER h3,
-#DW__GLOBAL_FOOTER h4,
-#DW__GLOBAL_FOOTER h5,
-#DW__GLOBAL_FOOTER h6,
-#DW__GLOBAL_FOOTER p {
+.dw__footer_left p,
+.dw__footer_navigation_section_title {
 	color: white !important;
 }
+
 #DW__GLOBAL_FOOTER a {
 	text-decoration: none;
 	color: white;
