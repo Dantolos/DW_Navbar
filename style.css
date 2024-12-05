@@ -49,6 +49,20 @@ div:has(> div.content) {
 	border-bottom: none;
 }
 
+/*HEADER Demenzmeet*/
+.site_header {
+position: fixed;
+    top: 40px;
+    width: 100vw;
+    background-color: white;
+    z-index: 10;
+}
+
+/*Speaker Lightbox Demenzmeet*/
+.overlay__container__close {
+	top: 70px !important;
+}
+
 @media screen and (max-width: 1220px) {
 	/*Journal Header*/
 	header:has(> div#top-bar) {
@@ -78,6 +92,10 @@ div:has(> div.content) {
 	main.page-content {
 		margin-top: 20px;
 	}
+  /*Speaker Lightbox Demenzmeet*/
+  .overlay__container__close {
+    top: 70px !important;
+  }
 }
 
 #DW__GLOBAL_NAVBAR {
