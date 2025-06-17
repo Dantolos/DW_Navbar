@@ -10,9 +10,10 @@ body {
 }
 
 /*Journal Header (wird nicht mehr gebraucht) :: header:has(> div#top-bar), */
+header:has(> div#top-bar),
 header.page-header /*Wiki Header*/ {
     position: fixed !important;
-    top: 40px !important;
+    top: 60px !important;
     width: 100vw;
 }
 
@@ -27,7 +28,7 @@ div:has(> div.content) {
     top: 100px;
 }
 
-/*Wiki Content */
+/* Wiki Content */
 .page-header__bottom,
 #alphabet {
     top: 100px;
