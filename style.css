@@ -1,57 +1,57 @@
 html {
-	height: auto !important;
+    height: auto !important;
 }
 body {
-	margin-top: 40px !important;
+    margin-top: 40px !important;
 }
 #top-bar > div > div > div.bg-royalpurple,
 .page-header__top-text {
-	margin-top: -1px;
+    margin-top: -1px;
 }
 
-header:has(> div#top-bar), /*Journal Header*/
+/*Journal Header (wird nicht mehr gebraucht) :: header:has(> div#top-bar), */
 header.page-header /*Wiki Header*/ {
-	position: fixed !important;
-	top: 40px !important;
-	width: 100vw;
+    position: fixed !important;
+    top: 40px !important;
+    width: 100vw;
 }
 
 /*Journal normal Content*/
 main {
-	top: 100px;
-	position: relative;
+    top: 100px;
+    position: relative;
 }
 
 /*Journal Article Content*/
 div:has(> div.content) {
-	top: 100px;
+    top: 100px;
 }
 
 /*Wiki Content */
 .page-header__bottom,
 #alphabet {
-	top: 100px;
-	position: relative;
+    top: 100px;
+    position: relative;
 }
 
 .dw__footer_left p,
 .dw__footer_navigation_section_title {
-	color: white !important;
+    color: white !important;
 }
 
 #DW__GLOBAL_FOOTER a {
-	text-decoration: none;
-	color: white;
+    text-decoration: none;
+    color: white;
 }
 
 /*hide bottom border */
 .about.page-container {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 /*HEADER Demenzmeet*/
 .site_header {
-position: fixed;
+    position: fixed;
     top: 40px;
     width: 100vw;
     background-color: white;
@@ -60,77 +60,95 @@ position: fixed;
 
 /*Speaker Lightbox Demenzmeet*/
 .overlay__container__close {
-	top: 70px !important;
+    top: 70px !important;
 }
 
 @media screen and (max-width: 1220px) {
-	/*Journal Header*/
-	header:has(> div#top-bar) {
-		position: sticky;
-		top: 0px !important;
-	}
-	main {
-		top: 0;
-		margin-top: 40px;
-	}
-	div:has(> div.content) {
-		top: 0;
-	}
-	body {
-		margin-top: 0px !important;
-	}
-	/*Wiki Content */
-	header.page-header /*Wiki Header*/ {
-		top: 0 !important;
-	}
-	#alphabet {
-		margin-top: 0;
-	}
-	.page-header__bottom {
-		margin-top: 0px;
-	}
-	main.page-content {
-		margin-top: 20px;
-	}
-  /*Speaker Lightbox Demenzmeet*/
-  .overlay__container__close {
-    top: 70px !important;
-  }
+    /*Journal Header*/
+    header:has(> div#top-bar) {
+        position: sticky;
+        top: 0px !important;
+    }
+    main {
+        top: 0;
+        margin-top: 40px;
+    }
+    div:has(> div.content) {
+        top: 0;
+    }
+    body {
+        margin-top: 0px !important;
+    }
+    /*Wiki Content */
+    header.page-header /*Wiki Header*/ {
+        top: 0 !important;
+    }
+    #alphabet {
+        margin-top: 0;
+    }
+    .page-header__bottom {
+        margin-top: 0px;
+    }
+    main.page-content {
+        margin-top: 20px;
+    }
+    /*Speaker Lightbox Demenzmeet*/
+    .overlay__container__close {
+        top: 70px !important;
+    }
 }
 
 #DW__GLOBAL_NAVBAR {
-	z-index: 2000000;
-	position: fixed;
-	transition: all 200ms ease-in-out;
-	top: 0;
+    z-index: 2000000;
+    position: fixed;
+    transition: all 200ms ease-in-out;
+    top: 0;
 }
 
 .dw__navbar {
-	width: 100vw;
-	z-index: 100000 !important;
-	box-shadow: 3px 3px 32px -4px rgba(10, 0, 51, 0.2);
+    width: 100vw;
+    z-index: 100000 !important;
+    box-shadow: 3px 3px 32px -4px rgba(10, 0, 51, 0.2);
 }
 .dw__global_nav_embed_wrapper {
-	transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 @font-face {
-	font-family: "Herbit";
-	font-weight: 300 800;
-	font-style: normal;
-	font-stretch: normal;
-	src: url("./fonts/herbit-semibold.woff2") format("woff2");
+    font-family: "Herbit";
+    font-weight: 300 800;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("./fonts/herbit-semibold.woff2") format("woff2");
 }
 
 /*LP Fixes*/
 .no-instructor {
-	display: none;
+    display: none;
 }
 #popup-course {
-	margin-top: 40px;
+    margin-top: 40px;
 }
+
+.quiz-status > div {
+    border-radius: 20px;
+}
+
+.quiz-status .questions-index,
+.quiz-status .questions-index span,
+.quiz-status .current-point,
+.quiz-status .countdown {
+    color: white !important;
+}
+
 @media screen and (max-width: 1220px) {
-	#popup-course {
-		margin-top: 0px;
-	}
+    #popup-course {
+        margin-top: 0px;
+    }
+}
+
+.quiz-buttons > div {
+    bottom: 50px !important;
+    height: 90px !important;
+    background: white !important;
 }
